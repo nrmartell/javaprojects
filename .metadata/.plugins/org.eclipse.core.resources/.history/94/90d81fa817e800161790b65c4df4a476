@@ -1,0 +1,116 @@
+	import java.io.File;
+	import java.io.FileNotFoundException;
+	import java.util.Scanner;
+
+public class Calories1 {
+	
+	public static void main(String[] args) throws FileNotFoundException {
+	 // Creating File Object for the given file.
+    File file = new File("info.txt");
+    // Creating Scanner to read the file, passing file object as input.
+    Scanner in = new Scanner(file);
+
+    // Reading the first line which will contain all lengths
+    String MondayString = in.nextLine();
+//    System.out.println(MondayString);
+    // Splitting the line by space (" ") , to create an array for all the values.
+    String Monday[] = MondayString.split(" ");
+    int tres = Monday.length;
+    // creating variable n for the Number of boxes
+   
+
+    //  Number of rows will be 7, columns will be 3.
+    double[][] weeklyCalories = new double[7][3];
+    // Since the array was split into strings,conversion to double type is needed.
+    // Adding all the lengths at row 0, so that will be fixed.
+    for (int i = 0; i < Monday.length; i++) {
+        weeklyCalories[0][i] = Integer.parseInt(Monday[i]);
+        System.out.println(weeklyCalories[0][i]);
+    }
+
+    // Same process as widths and heights.
+    // For widths, it would be row with index 1 
+    // and for heights it would be row with index 2.
+    String TuesdayString = in.nextLine();
+    String Tuesday[] = TuesdayString.split(" ");
+//    System.out.println(TuesdayString);
+    for (int i = 0; i < Tuesday.length; i++) {
+        weeklyCalories[1][i] = Integer.parseInt(Tuesday[i]);
+//        System.out.println(weeklyCalories);
+    }
+
+    String WednesdayString = in.nextLine();
+    String Wednesday[] = WednesdayString.split(" ");
+//    System.out.println(WednesdayString);
+    for (int i = 0; i < Wednesday.length; i++) {
+        weeklyCalories[2][i] = Integer.parseInt(Wednesday[i]);
+    }
+    
+    String ThursdayString = in.nextLine();
+    String Thursday[] = ThursdayString.split(" ");
+//    System.out.println(ThursdayString);
+    for (int i = 0; i < Thursday.length; i++) {
+        weeklyCalories[3][i] = Integer.parseInt(Thursday[i]);
+    }
+    String FridayString = in.nextLine();
+    String Friday[] = FridayString.split(" ");
+//    System.out.println(FridayString);
+    for (int i = 0; i < Friday.length; i++) {
+        weeklyCalories[4][i] = Integer.parseInt(Friday[i]);
+    }
+    String SaturdayString = in.nextLine();
+    String Saturday[] = SaturdayString.split(" ");
+//    System.out.println(SaturdayString);
+    for (int i = 0; i < Saturday.length; i++) {
+        weeklyCalories[5][i] = Integer.parseInt(Saturday[i]);
+    }
+    String SundayString = in.nextLine();
+     String Sunday[] = SundayString.split(" ");
+//    System.out.println(SundayString);
+    for (int i = 0; i < Sunday.length; i++) {
+        weeklyCalories[6][i] = Integer.parseInt(Sunday[i]);
+    }
+
+    //call the methods/functions.
+    System.out.println(weeklyCalories);
+    in.close(); //closing scanner
+    
+    
+//    TotalDailyCalories(null);
+	}
+	
+	
+	public static void TotalDailyCalories(double[][] weeklyCalories){
+		
+	     
+		int numCalories = weeklyCalories[0].length;
+	        double totalCalories = 0;
+
+	        for (int i = 0; i < numCalories; i++) {
+	            
+	            totalCalories += numCalories;
+	        }
+
+	        System.out.println("Volume Total: " + totalCalories);
+		
+	}
+	public static void AverageDailyCalories(){
+		
+	}
+	
+	public static void MealAverageCalories(){
+		
+	}
+
+	public static void MaxDailyCalories(){
+	
+	}
+	public static void MaxMealCalories(){
+	
+	}
+	
+	
+}
+	
+	
+	

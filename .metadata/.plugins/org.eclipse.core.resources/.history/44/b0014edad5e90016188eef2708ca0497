@@ -1,0 +1,208 @@
+//*************************************************************************************/
+/*	Natalie Martell	 UTEP ID: 80327338						   						  */
+/*	Lab 1																			  */
+/* 	TA: Anthony Ortiz																  */	
+/* 	Date Modified 1/29/17															  */	
+/* Purpose:  Pull data from an text file containing box dimensions.Then				  *										  */	
+/* create a 2 dimensional array containing length width and height.Display volume 	  */
+/* of each box,total volume, and dimensions of largest box and smallest box  		  */		 
+//*************************************************************************************/
+
+	
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+	import java.util.Scanner;
+
+	public class Calories1 {
+		public static void main(String[] args) throws FileNotFoundException {
+
+	    	readFileName();
+
+	    }
+
+	    public static void readFileName()  {
+
+	    	Scanner keyboard = new Scanner(System.in); System.out.print("Enter the name of the file: ");
+	    	String fileName = keyboard.nextLine();
+	    	Scanner inFile = null;
+			try {
+				inFile = new Scanner(new FileInputStream(fileName));
+			} catch (FileNotFoundException e) {
+				System.out.println("Incorrect File Entered, Cant Find File");
+				e.printStackTrace();
+			}
+
+	        
+	        String MondayString = inFile.nextLine();
+
+	        // Splitting the line by space (" ") , to create an array for all the values.
+	        String Monday[] = MondayString.split(" ");
+	        // creating variable n for the Number of boxes
+//	        int n = Monday.length;
+	        int n = 3;
+	        //  Number of rows will be 3, columns will be n.
+	        int [][] weeklyCalories = new int [7][n];
+//	        checkArraySize(weeklyCalories);
+//	        if(weeklyCalories.length < [7][n])
+
+	   
+	        // Since the array was split into strings,conversion to double type is needed.
+	        // Adding all the lengths at row 0, so that will be fixed.
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[0][i] = Integer.parseInt(Monday[i]);
+	        }
+
+	        // Same process as widths and heights.
+	        // For widths, it would be row with index 1 
+	        // and for heights it would be row with index 2.
+	        String tuesdayString = inFile.nextLine();
+	        String Tuesday[] = tuesdayString.split(" ");
+
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[1][i] = Integer.parseInt(Tuesday[i]);
+	        }
+
+	        String wednesdayString = inFile.nextLine();
+	        String Wednesday[] = wednesdayString.split(" ");
+
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[2][i] = Integer.parseInt(Wednesday[i]);
+	        }
+	        
+	        
+	        String thursdayString = inFile.nextLine();
+	        String Thursday[] = thursdayString.split(" ");
+
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[3][i] = Integer.parseInt(Thursday[i]);
+	        }
+	        
+	        String fridayString = inFile.nextLine();
+	        String Friday[] = fridayString.split(" ");
+
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[4][i] = Integer.parseInt(Friday[i]);
+	        }
+
+	        String saturdayString = inFile.nextLine();
+	        String Saturday[] = saturdayString.split(" ");
+
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[5][i] = Integer.parseInt(Saturday[i]);
+	        }
+	        
+	        String sundayString = inFile.nextLine();
+	        String Sunday[] = sundayString.split(" ");
+
+	        for (int i = 0; i < n; i++) {
+	            weeklyCalories[6][i] = Integer.parseInt(Sunday[i]);
+	        }
+	        
+	      
+	        
+	        inFile.close(); //closing scanner
+	        keyboard.close();
+	        
+	        //call the methods/functions.
+	        getDailyCalories(weeklyCalories);
+	        System.out.println();
+	        getAverageDailyCalories(weeklyCalories);
+	        System.out.println();
+	        getAverageCaloriesPerMeal(weeklyCalories);
+	        System.out.println();
+	        getMaxDailyCalories(weeklyCalories);
+	        System.out.println();
+	        getMaxMealCalories(weeklyCalories);
+	        System.out.println();
+	        
+	    }
+
+	    public static void checkArraySize(int[][] weeklyCalories){
+	    	for (int i = 0; i < weeklyCalories[0].length; i++) {
+	    		
+	    		for (int j = 0; j < weeklyCalories.length; j++){
+	    			
+	    			if(weeklyCalories.length < 7){
+	    				System.out.println("Array is too small");
+	    				
+	    			}
+	    			
+	    		}
+	    		
+	     	}
+	    	
+	    	
+	    }
+	    public static void getDailyCalories(int[][] weeklyCalories) {
+	        for (int i = 0; i < weeklyCalories.length; i++) {
+	            // create dailyCalories variable 
+	            int dailyCalories = weeklyCalories[i][0] + weeklyCalories[i][1] + weeklyCalories[i][2];
+	            String daysOfWeek [] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+	            System.out.println("Daily Total Calories For "  + (daysOfWeek[i])+ " is " + dailyCalories);
+	        }
+	    }
+
+	    // Prints the average daily calorie consumption
+	    public static void getAverageDailyCalories(int [][] weeklyCalories) {
+	        for (int i = 0; i < weeklyCalories.length; i++) {
+	        	int dailyCalories = weeklyCalories[i][0] + weeklyCalories[i][1] + weeklyCalories[i][2];
+	            String daysOfWeek [] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+	        	int averageCalories = dailyCalories/3;
+	        	System.out.println("Daily Average Calories For "  + (daysOfWeek[i])+ " is " + averageCalories);
+	        }
+
+
+	    }
+	    
+	    public static void getAverageCaloriesPerMeal(int [][] weeklyCalories) {
+	        for (int i = 0; i < weeklyCalories[0].length; i++) {        	
+	            int MealCalories = weeklyCalories[0][i] + weeklyCalories[1][i] + weeklyCalories[2][i] + weeklyCalories[3][i] + weeklyCalories[4][i] +  weeklyCalories[5][i] +   weeklyCalories[6][i];
+	            String Meals[] = {"Breakfast", "Lunch", "Dinner"};
+	            int AverageMealCalories = MealCalories/7;
+        	
+		            System.out.println("Daily Calorie Average "+ (Meals[i])  + " " + " is " + AverageMealCalories);
+	        	}
+	         }
+
+	    public static void getMaxDailyCalories(int [][] weeklyCalories) {
+	    	for (int i = 0; i < weeklyCalories.length; i++) {
+	    		int maxCalories = Integer.MIN_VALUE; // set max to minimum value before starting loop
+              
+	            String daysOfWeek [] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+	            for (int j = 0; j < weeklyCalories[i].length; j++){
+	                	 
+	                    if (weeklyCalories[i][j] > maxCalories)
+	                        maxCalories = weeklyCalories[i][j];
+	            }
+	                System.out.println( daysOfWeek[i] + " Max Calories consumed " + maxCalories);
+	         }
+	    }
+
+	    public static void getMaxMealCalories(int [][] weeklyCalories) {
+	        	for (int i = 0; i < weeklyCalories[0].length; i++) { // i should be your column
+	                int maxMealCalories = weeklyCalories[0][i];// assign 1st value of the column as max
+	                String Meals [] = {"Breakfast", "Lunch", "Dinner"}; 
+	                for (int j = 0; j < weeklyCalories.length; j++){ // j is your row
+	                    if (weeklyCalories[j][i] > maxMealCalories){ // check the column elements instead of row elements
+	                        maxMealCalories = weeklyCalories[j][i];// get the column values 
+	                }
+	             }
+	                System.out.println(Meals[i] + " Max Calories consumed this week "+ maxMealCalories );
+	    }
+	        
+	        
+	        
+	        
+	        
+	        
+	}
+}
+	        
+	        
+	    	
+
+
+
+
+	
+
