@@ -1,12 +1,3 @@
-//*************************************************************************************/
-/*	Natalie Martell	 UTEP ID: 80327338						   						  */
-/*	Lab 1																			  */
-/* 	TA: Anthony Ortiz																  */	
-/* 	Date Modified 1/29/17															  */	
-/* Purpose:  Pull data from an text file containing box dimensions.Then				  *										  */	
-/* create a 1 dimensional arrays for length width and height.Display volume 	      */
-/* of each box,total volume, and dimensions of largest box and smallest box  		  */		 
-//*************************************************************************************/
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
