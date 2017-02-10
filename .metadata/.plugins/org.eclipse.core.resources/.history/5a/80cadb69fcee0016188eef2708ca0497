@@ -1,0 +1,65 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+
+public class MainProg {
+	private static Scanner keyboard;
+	 
+	public static void main(String[] args){
+		keyboard = new Scanner(System.in);
+        System.out.print("Enter the name of the file: ");
+        String fileName = keyboard.nextLine();
+
+//         Reading Data from the input file.
+        Scanner inFile = null;
+        try {
+            inFile = new Scanner(new FileInputStream(fileName));
+        } catch (FileNotFoundException e) {
+            System.out.println("Incorrect File Name Entered, Cant Find File");
+            e.printStackTrace();
+        }
+            
+        int n=0;
+        double[][] fileData = new double[n][3];
+        n = fileData.length;
+        double maxBoxes = 0;
+//
+//        	
+        for (int i = 0; i < fileData.length; i++) {
+            // Checking if there is a next line or not
+            // dont know how many lines there are yet.
+            
+        	
+        	if (inFile.hasNextLine()) {
+                String boxVolumes = inFile.nextLine();
+                System.out.println(boxVolumes);
+                String[] arrBoxes = boxVolumes.split(" ");
+                // continue with any amount of entries. Then assign memory to array accordingly.
+                
+                int onlyVolumes = arrBoxes.length;
+                if (onlyVolumes > fileData[0].length)
+                    maxBoxes = onlyVolumes;
+                fileData[i] = new double[onlyVolumes];
+
+                // Assigning the values to respective positions
+                for (int j = 0; j < onlyVolumes; j++) {
+                    fileData[i][j] = Double.parseDouble(arrBoxes[j]);
+                    
+                    
+                }
+            } 
+
+        }
+
+	
+	}
+
+
+	
+	
+
+
+
+	        
+}

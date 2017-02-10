@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+
+public class MainProg {
+	private static Scanner keyboard;
+	public static void main(String[] args){
+		 keyboard = new Scanner(System.in);
+	     System.out.print("Enter the name of the file: ");
+	     String fileName = keyboard.nextLine();
+	     Scanner inFile = null;
+	        try {
+	            inFile = new Scanner(new FileInputStream(fileName));
+	        } catch (FileNotFoundException e) {
+	            System.out.println("Incorrect File Name Entered, Cant Find File");
+	            e.printStackTrace();
+	        }
+	
+	}
+
+
+
+}
