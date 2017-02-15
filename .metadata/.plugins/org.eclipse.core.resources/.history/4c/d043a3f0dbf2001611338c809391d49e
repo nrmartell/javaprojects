@@ -1,0 +1,38 @@
+// Class implementing Basketball.
+
+public class Basketball {
+	
+	// Radius of this basketball
+	private double radius;
+	
+	/**
+	 * Public constructor for basketball object.
+	 * 
+	 * param val : Used to set up the radius of the basketball
+	 */
+	public Basketball(double val)
+	{
+		this.radius = val;
+	}
+	
+	/**
+	 * This function returns the volume of the basketball.
+	 * 
+	 * return volume : double type volume of the ball
+	 */
+	public double getVolume()
+	{
+		double volume = (4.0 / 3.0) * Math.PI * Math.pow(this.radius, 3);
+		return volume;
+	}
+	
+	/**
+	 * Getter function for the radius of the ball.
+	 * 
+	 * return
+	 */
+	public double getRadius()
+	{
+		return this.radius;
+	}
+}
