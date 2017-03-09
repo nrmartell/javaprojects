@@ -1,0 +1,25 @@
+package linkedlist;
+
+public class TestLinkedList {
+
+	  
+
+	   public static void main(String[] args) {
+
+	      
+
+	       LinkedList list = new LinkedList();
+
+	      
+
+	       for (int i=0; i<5;i++){
+	    	 //int ran = (int) (100.0* Math.random());
+	    	 int ran = i+2;
+	    	 t=new list(ran, t);
+	    	 }
+	   }
+
+	}
+
+
+

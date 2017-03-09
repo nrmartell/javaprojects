@@ -2,16 +2,25 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="parse" key="selection"/>
+		<item value="maxBoxAllowed" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="parse"/>
-			<item value="n"/>
+			<item value="maxBoxAllowed"/>
+			<item value="splited"/>
+			<item value="boxtype"/>
+			<item value="val"/>
+			<item value="fitBallsIntoBoxes"/>
+			<item value="mnSpcLeft"/>
+			<item value="mnidx"/>
+			<item value="nub"/>
 		</list>
 		<list key="replacehistory">
+			<item value="splitString"/>
+			<item value="minSpaceLeft"/>
+			<item value="minindex"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

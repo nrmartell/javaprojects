@@ -1,0 +1,90 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class AnalyzePOI {
+
+	public AnalyzePOI() {
+		// TODO Auto-generated constructor stub
+	}
+	private static Scanner keyboard;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		printLinkedList();
+	}
+	
+	public static void printLinkedList(){
+//		
+//	    	keyboard = new Scanner(System.in);
+//	    	
+//	        System.out.print("Enter the name of the file: ");
+//	        String fileName = keyboard.nextLine();
+//
+//	        // Reading data from the input file.
+//	        Scanner inFile = null;
+//	        try {
+//	            inFile = new Scanner(new FileInputStream(fileName));
+//	        } catch (FileNotFoundException e) {
+//	            System.out.println("Incorrect File Name Entered, Can't Find File");
+//	            e.printStackTrace();
+//	        }
+		
+		 LinkedList<String> result = new LinkedList<>();
+		   while (true) {
+		      String line = source.readLine();
+		      if (line == null) break;  // end of file
+		      result.add(line);
+		   }  
+		   return result;
+		}
+
+		LinkedList<String> loadFile(String filename) {
+		   BufferedReader reader = null; 
+		   try {
+		     reader = new BufferedReader(new FileReader(filename));
+		     return readLines(reader);
+		   } finally {
+		     // free up the file, exception or not.
+		     // yes, this happens before the return, too.
+		     if (reader != null) reader.close(); 
+		   }
+		}
+		
+		
+
+	
+	public static void searchPerson(){
+		
+	}
+	
+	public static void insertPerson(){
+		
+	}
+	
+	public static void personSwap(){
+		
+	}
+	
+	public static void removeRecord(){
+		
+	}
+		
+	public static void removeAllRecords(){
+		
+	}
+	
+	public static void writeOutputFile(){
+		
+	}
+	
+	
+		
+	
+		
+		
+	
+
+}

@@ -1,3 +1,11 @@
+   /*------------------------------------------------------------------------------------
+    |  Name: Natalie Martell
+    |  Date Modified 2/14/17	
+    |  Purpose:  Program is designed to help a company ship basketballs. 
+    |  Program will take input from a text file with box dimensions and radii
+    |  and then use that data to determine which boxes to use on each size of basketball
+    *------------------------------------------------------------------------------------*/
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -58,7 +66,7 @@ public class MainProg {
 				}
 			}
 			
-			// If we have found atleast one type of box which can fit the ball
+			// If have found at least one type of box which can fit the ball
 			if (minindex != -1) {
 				
 				cntBallsFit++;		// increment balls fit count if ball fits
@@ -177,7 +185,7 @@ public class MainProg {
 				}
 			}
 			
-			// To check if  read correctly
+			// To check if read file correctly
 			System.out.println("Total boxes found: " + boxesAdded);
 			System.out.println("Total balls found:" + ballsAdded);
 			

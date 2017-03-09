@@ -1,4 +1,10 @@
-
+   /*------------------------------------------------------------------------------------
+    |  Name: Natalie Martell
+    |  Date Modified 2/14/17	
+    |  Purpose:  Program is designed to help a company ship basketballs. 
+    |  Program will take input from a text file with box dimensions and radii
+    |  and then use that data to determine which boxes to use on each size of basketball
+    *------------------------------------------------------------------------------------*/
 public class BoxType {
 
 	// Dimensions of the box
@@ -13,10 +19,7 @@ public class BoxType {
 		this.height = h;
 	}
 	
-	//This function is used to compute and return the volume of the box.
-
-	 //@return volume : Volume of the box
-
+	//This function to compute and return the volume of the box.
 	public double getVolume()
 	{
 		double volume = this.length * this.width * this.height;
@@ -28,10 +31,8 @@ public class BoxType {
 		double ballVolume = ball.getVolume();
 		double boxVolume = this.getVolume();
 		double diameter = ball.getDiameter();
-		
-		
-		
-		if( diameter > this.length || diameter > this.length || diameter > this.width ){
+
+		if( diameter > this.length && diameter > this.width && diameter > this.height ){
 			return false;
 		}
 		else{
@@ -49,8 +50,6 @@ public class BoxType {
 		double boxVolume = this.getVolume();
 		
 		return (boxVolume - ballVolume);
-		
-		
 		
 	}
 	

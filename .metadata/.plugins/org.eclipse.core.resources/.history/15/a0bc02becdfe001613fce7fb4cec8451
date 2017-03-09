@@ -1,0 +1,8 @@
+
+public class MyListOfInts {
+
+	public MyListOfInts() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

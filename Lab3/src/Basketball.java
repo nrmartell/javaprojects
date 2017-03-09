@@ -1,3 +1,10 @@
+   /*------------------------------------------------------------------------------------
+    |  Name: Natalie Martell
+    |  Date Modified 2/14/17	
+    |  Purpose:  Program is designed to help a company ship basketballs. 
+    |  Program will take input from a text file with box dimensions and radii
+    |  and then use that data to determine which boxes to use on each size of basketball
+    *------------------------------------------------------------------------------------*/
 // Class implementing Basketball.
 
 public class Basketball {
@@ -6,11 +13,11 @@ public class Basketball {
 	private double radius;
 	
 	//  constructor for basketball object.
-	 //  val : Used to set up the radius of the basketball
+	 
 	
-	public Basketball(double val)
+	public Basketball(double rad)
 	{
-		this.radius = val;
+		this.radius = rad;
 	}
 	
 	//  returns the volume of the basketball.

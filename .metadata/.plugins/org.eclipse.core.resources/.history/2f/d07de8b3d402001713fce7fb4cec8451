@@ -1,0 +1,92 @@
+public class ListOperations {
+	
+	public static void main(String[] args){
+		MyListOfInts t=null;
+		for (int i=0; i<5;i++){
+//			int ran = (int) (100.0* Math.random());
+			int ran = i+2;
+			t=new MyListOfInts(ran, t);
+		}
+		System.out.println("All numbers in the list:");
+		printMyList(t);
+		System.out.println();
+		System.out.println("Sum="+sumOfMyList(t));
+		System.out.println("Max="+maxOfMyList(t));
+		System.out.println("Length="+lengthOfMyList(t));
+		t=reverseMyList(t);
+		System.out.println("All numbers in the reversed list:");
+		printMyList(t);
+		System.out.println();
+	}
+	
+	public static void printMyList(MyListOfInts m){
+		
+		//If current node is null, we shouldn't print anything
+		if(m==null){
+			return;
+		}
+		
+		//Printing current number
+		System.out.print(m.firstInt + " ");
+		
+		//Recursive Step
+		printMyList(m.restOfTheInts);
+	}
+	
+	public static int sumOfMyList (MyListOfInts m){
+		//If current node is null, we shouldn't add anything to the sum
+		if(m==null){
+			return 0;
+		}
+		
+		//Recursive Step
+		return m.firstInt + sumOfMyList(m.restOfTheInts);
+	}
+	
+	public static int maxOfMyList (MyListOfInts m){
+		if(m==null)
+			return 0;
+		//Recursive Step
+		return Math.max(m.firstInt, maxOfMyList (m.restOfTheInts));
+	}
+	
+	public static int lengthOfMyList (MyListOfInts m){
+		if(m==null){
+			return 0;
+		}
+		//Recursive Step
+		return 1+lengthOfMyList(m.restOfTheInts);
+	}
+	
+	public static MyListOfInts reverseMyList (MyListOfInts m){
+		
+		/*
+		The general recursive algorithm for this is:
+
+		1) Divide the list in 2 parts - first node and rest of the list.
+	    2) Recursively call reverse for the rest of the linked list.
+		3) Link rest to first.
+		4) Fix head pointer
+		*/
+		
+		// Empty list or list has only one node 
+		if(m == null || m.restOfTheInts == null){
+	        return m;
+	    }
+		
+		// Recursive call on rest
+	    MyListOfInts rest = reverseMyList(m.restOfTheInts);
+	    
+	    // Make first link to the last node in the reversed rest.
+	    m.restOfTheInts.restOfTheInts = m;
+	    
+	    // Since first is the new last, make its restOfTheInts null.
+	    m.restOfTheInts = null;
+
+	    // Rest now points to the head of the reversed list.
+	    return rest;
+	    
+	    
+	    
+	}
+}

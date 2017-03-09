@@ -1,0 +1,9 @@
+package classexamples;
+
+public class STA {
+
+	public STA() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

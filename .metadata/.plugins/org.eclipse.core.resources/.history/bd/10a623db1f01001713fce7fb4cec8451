@@ -1,0 +1,9 @@
+package linkedlist;
+
+public class NodeLIst {
+
+	public NodeLIst() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
