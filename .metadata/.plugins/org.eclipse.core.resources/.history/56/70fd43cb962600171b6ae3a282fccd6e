@@ -1,0 +1,48 @@
+
+public class GenericStack  {
+
+	public GenericStack() {
+		
+	}
+	
+	static String operators[] = {"+", "-", "%", "/", "*"};
+	
+	public static void createStack(){
+		
+	}
+	public boolean isEmpty(LinkedList length){
+		
+		if(length == 0){
+			return true;
+		}	
+		else{
+			return false;
+		}
+
+		
+	}
+	public static void push(){
+	
+		 LinkedList oldHead = head;
+		    LinkedList = new LinkedList();
+		    head.item = item;
+		    head.next = oldHead;
+		    size++;
+		
+	}
+	public static void pop(){
+
+	    LinkedList item = head.item;
+	    head = head.next;
+	    size--;
+	    return item;
+		
+	} 
+	public static void popAll(){
+		
+	} 
+	public static void peek(){
+		
+	}
+
+}

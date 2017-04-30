@@ -1,9 +1,0 @@
-package linkedlist;
-
-public class TestLinkedList {
-
-	public TestLinkedList() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

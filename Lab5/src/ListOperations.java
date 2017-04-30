@@ -1,8 +1,9 @@
-   /*------------------------------------------------------------------------------------
-    |  Date Modified 3/7/17	
-    |  Purpose:  Program is designed to create a linked list and use recursion to
-    |  perform certain tasks like printing the list, finding the max and adding values
-    *------------------------------------------------------------------------------------*/
+//   /*------------------------------------------------------------------------------------
+//    |  Name: Natalie Martell
+//    |  Date Modified 3/8/17	
+//    |  Purpose:  Program is designed to create a linked list and use recursion to
+//    |  perform certain tasks like printing the list, finding the max and adding values
+//    /*-----------------------------------------------------------------------------------*/
 
 
 public class ListOperations {
@@ -10,8 +11,8 @@ public class ListOperations {
 	public static void main(String[] args){
 		MyListOfInts t=null;
 		for (int i=0; i<5;i++){
-//			int ran = (int) (100.0* Math.random());
-			int ran = i+2;
+			int ran = (int) (-100.0* Math.random());
+			//int ran = i+2;
 			t=new MyListOfInts(ran, t);
 		}
 		System.out.println("All numbers in the list:");
@@ -65,7 +66,7 @@ public class ListOperations {
 
 	public static int maxOfMyList (MyListOfInts m){
 		if(m==null){
-			return 0;	
+			return Integer.MIN_VALUE;	
 		}
 		//Recursive Step
 		return Math.max(m.firstInt, maxOfMyList (m.restOfTheInts));
@@ -100,16 +101,14 @@ public class ListOperations {
 		
 		// Recursive call on rest of ints
 	    MyListOfInts rest = reverseMyList(m.restOfTheInts);
-	    
 	    // Make first link to the last node in the reversed rest.
 	    m.restOfTheInts.restOfTheInts = m;
 	    
 	    // Since first is the new last, make its restOfTheInts null.
 	    m.restOfTheInts = null;
-
 	    // Rest now points to the head of the reversed list.
-	    return rest;
 	    
+	    return rest;
 	    
 	    
 	}

@@ -1,0 +1,80 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Evaluator {
+
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.print("Please provide the filename:");
+			String inputFileName = br.readLine();
+			LinkedList list = readFile(inputFileName);
+
+			if(list == null) {
+				while(true) {
+					System.out.println("\nSome error occured in reading the file.");
+					System.out.println("Please enter a file meeting required specifications.");
+					
+					System.out.print("\nPlease provide the filename of the input connection profile: ");
+					inputFileName = br.readLine();
+					list = readFile(inputFileName);
+					
+					if(list != null)
+						break;
+				}
+			}
+
+			System.out.println("\n Successfully read the file.");
+			list.printList();
+			
+		} catch (IOException e) {
+			//e.printStackTrace();
+			System.out.println("Error in reading file. The file probably does not exist");
+			return;
+		}
+	}
+
+	private static LinkedList readFile(String fileName) throws IOException {
+		LinkedList list = new LinkedList();
+		int cur = 0;
+		FileReader fr;
+		
+		try {
+			fr = new FileReader(fileName);
+			BufferedReader br = new BufferedReader(fr);
+			
+			String cLine;
+			
+			while((cLine = br.readLine()) != null) {
+				String numOperators;
+				
+				try {
+					id = Long.parseLong(cLine);
+				} catch (NumberFormatException e) {
+					System.out.println("Expected ID in the file is not a long integer");
+					br.close();
+					return null;
+				}
+			}
+			fr.close();
+			br.close();
+			return list;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("File not found: " + fileName);
+			return null;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("Some error occurred in reading data from: " + fileName);
+			return null;
+		}
+	}
+
+	public Evaluator next;
+}

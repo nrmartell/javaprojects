@@ -1,0 +1,16 @@
+
+public class FileInfo {
+	
+//	private int number;
+	private String numOperators;
+	
+	
+	public FileInfo next;
+	
+	public FileInfo() {
+		 this.numOperator = new String(); 
+		this.next = null;
+
+	}
+}
+

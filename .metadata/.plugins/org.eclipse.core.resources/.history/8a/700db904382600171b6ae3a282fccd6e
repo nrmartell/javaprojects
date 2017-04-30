@@ -1,0 +1,12 @@
+
+public class FileInfo {
+	
+	private int number;
+	private String operator;
+	
+
+	public FileInfo() {
+		this.number = 0; this.operator = new String(); 
+		this.next = null;
+
+}

@@ -1,0 +1,12 @@
+
+public class FileInfo {
+	
+	private int number;
+	private String operator;
+	
+
+	public FileInfo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

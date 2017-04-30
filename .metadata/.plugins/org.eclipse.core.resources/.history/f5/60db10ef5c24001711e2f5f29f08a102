@@ -1,0 +1,34 @@
+
+
+	import java.io.FileWriter;
+	import java.io.IOException;
+
+	//Class implementing the POIList.
+
+	public class LinkedList {
+		
+		private Evaluator head;
+		int length;
+		
+		
+		public LinkedList() {
+			this.head = null;
+			this.length = 0;
+		}
+
+		 //This function prints the sequence of person in list 
+		 
+		public void printList() {
+			if(this.length == 0) {
+				System.out.println("\nThe list is empty.");
+				return;
+			}
+			POI cur = this.head;
+			
+			while(cur != null) {
+				System.out.println(cur.toString());
+				cur = cur.next;
+			}
+		}
+
+}

@@ -1,5 +1,6 @@
    /*------------------------------------------------------------------------------------
     |  Name: Natalie Martell
+    |  Date Modified 3/8/17	
     |  Purpose:  Program is designed to create a linked list and use recursion to
     |  perform certain tasks like printing the list, finding the max and adding values
     *------------------------------------------------------------------------------------*/

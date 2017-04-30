@@ -1,9 +1,0 @@
-package classexamples;
-
-public class StAStaticTest {
-
-	public StAStaticTest() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

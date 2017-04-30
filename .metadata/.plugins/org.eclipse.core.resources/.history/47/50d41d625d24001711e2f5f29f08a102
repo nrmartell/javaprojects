@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Evaluator {
+
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.print("Please provide the filename:");
+			String inputFileName = br.readLine();
+			LinkedList list = readFile(inputFileName);
+
+			if(list == null) {
+				while(true) {
+					System.out.println("\nSome error occured in reading the file.");
+					System.out.println("Please enter a file meeting required specifications.");
+					
+					System.out.print("\nPlease provide the filename of the input connection profile: ");
+					inputFileName = br.readLine();
+					list = readFile(inputFileName);
+					
+					if(list != null)
+						break;
+				}
+
+			}
+		
+
+	}
+
+	private static LinkedList readFile(String inputFileName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Evaluator next;
+}

@@ -1,0 +1,51 @@
+   /*------------------------------------------------------------------------------------
+    |  Name: Natalie Martell
+	|  Purpose:  Program is designed to create an array of cubes and utilize Bubble Sort and
+	|	selection sort to organize cubes by volume and compare bubble sort vs Selection sort
+	|	times
+    *------------------------------------------------------------------------------------*/
+
+public class Cube {
+
+	private double length, width, height;
+	
+	
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	public Cube(double l, double w, double h)
+	{
+		this.length = l;
+		this.width  = w;
+		this.height = h;
+	}
+	
+	public double getVolume()
+	{
+		double volume = this.length * this.width * this.height;
+		
+		return volume;
+	}	
+
+}

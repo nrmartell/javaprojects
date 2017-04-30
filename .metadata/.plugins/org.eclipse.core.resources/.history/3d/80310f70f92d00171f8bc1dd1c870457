@@ -1,0 +1,90 @@
+   /*------------------------------------------------------------------------------------
+    |  Name: Natalie Martell
+    |  Lab 8
+    |  TA: Raja Santha
+    |  Date Modified 4/16/17
+	|  Purpose:  Program is designed to create a queue and perform different tasks such 
+	|  as enqueue, dequeue, reversing the queue, and doubling the queue size in the event
+	|  that the queue becomes full.
+    *------------------------------------------------------------------------------------*/
+
+public class Queue{
+	private int QUEUE_SIZE = 5;
+	private Object[] items;
+	private int front, back, count;
+	
+	public Queue() {
+		items = new Object[QUEUE_SIZE];
+		front = 0;
+		back = QUEUE_SIZE -1;
+		count = 0;
+		System.out.println("Current Max Queue Size is: " + QUEUE_SIZE);
+	}
+	public boolean isEmpty(){
+		return count == 0;
+	}
+	public boolean isFull(){
+		return count == QUEUE_SIZE;
+	}
+	public void enqueue(Object newItem){
+		if (!isFull()){
+			back = (back+1) % QUEUE_SIZE;
+			items[back] = newItem;
+			count++;
+		
+			
+	
+		}else{
+			//Doubling queue size
+			System.out.println("Queue is full. Doubling the queue size.");
+			QUEUE_SIZE = 2*QUEUE_SIZE;
+			//creating a temporary queue array of double size to store original queue values
+			Object[] items_temp = new Object[QUEUE_SIZE];
+			for(int i=0; i<items.length; i++){
+				items_temp[i] = items[(front + i) % items.length];
+			}
+			
+			//assigning the temporary queue to the original queue
+			front = 0;
+			back = items.length-1;
+			items = items_temp;
+		
+			System.out.println("New maximum queue size is: " + QUEUE_SIZE);
+			
+			//adding the object in the queue
+			back = (back+1) % QUEUE_SIZE;
+			items[back] = newItem;
+			count++;
+			
+			System.out.println("Entered new item into the queue.");
+		}
+		
+	}
+	public Object dequeue(){
+		if (!isEmpty()){
+			Object queueFront = items[front];
+			front = (front+1) % QUEUE_SIZE;
+			count--;
+			return queueFront;
+		
+		}else
+			System.out.println("Trying to dequeue from empty queue");
+			return null;
+	}
+	public void dequeueAll(){
+		items = new Object[QUEUE_SIZE];
+		front = 0;
+		back = QUEUE_SIZE -1;
+		count =0;
+	}
+	public Object peek(){
+		if (!isEmpty()) {
+		return items[front];
+	}else
+		System.out.println("Trying to peek with empty queue");
+		return null;
+	}
+	public int size(){
+		return count;
+	}
+}// End of class Queue

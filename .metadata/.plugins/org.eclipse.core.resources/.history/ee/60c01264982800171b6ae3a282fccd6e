@@ -1,0 +1,42 @@
+public class LinkedList {
+	
+	//This will store the data
+	protected Object data;
+	
+	//This will keep track of the previous node in the stack
+    protected LinkedList previous;
+ 
+    /*  Constructor  */
+    public LinkedList()
+    {
+        previous = null;
+        data = 0;
+    }    
+    /*  Constructor  */
+    public LinkedList(Object d,LinkedList n)
+    {
+        data = d;
+        previous = n;
+    }    
+    /*  Function to set link to next Node  */
+    public void setLink(LinkedList n)
+    {
+        previous = n;
+    }    
+    /*  Function to set data to current Node  */
+    public void setData(Object d)
+    {
+        data = d;
+    }    
+    /*  Function to get link to next node  */
+    public LinkedList getLink()
+    {
+        return previous;
+    }    
+    /*  Function to get data from current Node  */
+    public Object getData()
+    {
+        return data;
+    }
+	
+}
