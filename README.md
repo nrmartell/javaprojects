@@ -2,10 +2,10 @@
 
 Lab projects completed during Data Structures and Algorithms course.
 Labs build on lectures topics covering:
--Arrays
--Linked Lists
--Stacks
--Queues
--Recursion
--Bubble Sort
--Selection Sort
+<li> Arrays </li>
+<li>Linked Lists</li>
+<li>Stacks<li>
+<li>Queues<li>
+<li>Recursion<li>
+<li>Bubble Sort<li>
+<li>Selection Sort<li>
